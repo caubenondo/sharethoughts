@@ -4,6 +4,10 @@ class Pages extends Controller{
      
     }
     public function index(){
+        if (isLoggedIn()) {
+            redirect('posts');
+        }
+
         $data = [
                 'title'=>'SDCCD Share Thoughts',
                 'description'=>'Simple Social Network built on the Hai\'s MVC '
